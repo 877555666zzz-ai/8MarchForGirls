@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2F-2 Group | Special Invitation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loading-line"></div>
+    <div class="gradient-overlay"></div>
+    
+    <!-- Decorative frame -->
+    <div class="frame-decoration">
+        <div class="corner-ornament top-left"></div>
+        <div class="corner-ornament top-right"></div>
+        <div class="corner-ornament bottom-left"></div>
+        <div class="corner-ornament bottom-right"></div>
+    </div>
+
+    <!-- Floating elements -->
+    <div class="floating-element" style="top: 10%; left: 5%; animation-delay: 0s;">✿</div>
+    <div class="floating-element" style="top: 20%; right: 10%; animation-delay: 5s;">❀</div>
+    <div class="floating-element" style="bottom: 30%; left: 8%; animation-delay: 10s;">✾</div>
+    <div class="floating-element" style="bottom: 15%; right: 5%; animation-delay: 15s;">❁</div>
+
+    <!-- Canvas for petals -->
+    <canvas id="petals-canvas"></canvas>
+
+    <div class="container">
+        <header class="elegant-header">
+            <p class="subtitle-top">Dear Ladies of</p>
+            <h1 class="main-title">Group 2F-2</h1>
+        </header>
+
+        <div class="divider"></div>
+
+        <div class="poem-container">
+            <div class="poem-text">
+                <p>To the <span class="highlight-word">amazing girls</span> of our group,</p>
+                <p>Your laughter brightens every classroom hour,</p>
+                <p>Your friendship makes our study days so <span class="highlight-word">sweet</span>,</p>
+                <p>Together we make every moment truly <span class="highlight-word">complete</span>.</p>
+                <p>In this journey of learning and growth,</p>
+                <p>You bring <span class="highlight-word">joy</span> and warmth to all of us both.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <p class="cta-text">A special surprise awaits</p>
+            <button class="elegant-btn" onclick="startEnvelopeAnimation()">
+                Open Invitation
+            </button>
+        </div>
+    </div>
+
+    <!-- ENVELOPE ANIMATION CONTAINER -->
+    <div class="envelope-container" id="envelopeContainer">
+        <div class="envelope" id="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body"></div>
+            <div class="envelope-front"></div>
+            
+            <div class="letter">
+                <div class="letter-content-preview">
+                    <div style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #8b6f6f; margin-bottom: 20px;">
+                        You're Invited
+                    </div>
+                    <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #5a4a4a; font-style: italic; line-height: 1.6;">
+                        <p>Dear Ladies of 2F-2...</p>
+                        <p style="margin-top: 15px; font-size: 0.9rem; color: #a08080;">Click to read the full message</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wax-seal" onclick="openEnvelope(event)" title="Click to open">✉</div>
+            <div class="click-hint">CLICK THE SEAL TO OPEN</div>
+        </div>
+        
+        <button class="skip-animation" onclick="skipToModal()">Skip Animation →</button>
+    </div>
+
+    <!-- Modal - ЕКІНШІ БЕТ -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-elegant">
+            <!-- Екінші беттің жеке frame декорациясы -->
+            <div class="modal-frame">
+                <div class="modal-corner top-left"></div>
+                <div class="modal-corner top-right"></div>
+                <div class="modal-corner bottom-left"></div>
+                <div class="modal-corner bottom-right"></div>
+            </div>
+
+            <button class="modal-close" onclick="closeElegantModal()">×</button>
+            
+            <div class="modal-header">
+                <span class="modal-icon">🌸</span>
+                <h2 class="modal-title">You're Invited</h2>
+                <p class="modal-subtitle">To Our Special Gathering</p>
+            </div>
+
+            <div class="modal-body">
+                <p>Dear Beautiful Ladies of 2F-2,</p>
+                
+                <p>On this special occasion, I would be honored to celebrate with the most <span class="highlight-word">wonderful</span> group of girls. Your presence lights up every day, and this is my way of showing appreciation for the friendship and joy you bring to our group.</p>
+
+                <div class="invitation-details">
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #8b6f6f; margin-bottom: 15px; font-weight: 400;">Please join me for</p>
+                    <span class="date-highlight">A Special Evening</span>
+                    <p style="font-size: 1.15rem; color: #8b6f6f; font-style: italic; line-height: 1.8; margin-top: 15px;">Good food, great company, and unforgettable memories<br>with the best group ever — 2F-2</p>
+                    
+                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(139,111,111,0.1);">
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #a08080; margin-bottom: 10px;">Date & Time</p>
+                        <p style="font-size: 1.1rem; color: #5a4a4a; font-weight: 500;">[date]</p>
+                        <p style="font-size: 1rem; color: #8b6f6f; margin-top: 5px;">[time]</p>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #a08080; margin-bottom: 10px;">Location</p>
+                        <p style="font-size: 1.1rem; color: #5a4a4a; font-weight: 500;">[location]</p>
+                    </div>
+                </div>
+
+                <p>Let's take a break from our studies and enjoy some well-deserved <span class="highlight-word">fun</span> together. You all deserve this moment of relaxation, laughter, and celebration. Our group wouldn't be the same without each and every one of you.</p>
+
+                <p>Looking forward to seeing all your <span class="highlight-word">beautiful smiles</span> there!</p>
+
+                <p class="signature">With appreciation and friendship</p>
+            </div>
+
+            <div class="scroll-indicator">↓ SCROLL TO READ MORE ↓</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
